@@ -24,3 +24,14 @@ hs_err_pid*
 
 .gradle
 gradle
+
+# Eclipse project files
+.classpath
+.project
+.settings
+
+#Gradle
+.gradletasknamecache
+.gradle/
+build/
+bin/
