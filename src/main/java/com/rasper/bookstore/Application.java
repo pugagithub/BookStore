@@ -1,28 +1,25 @@
-package hello;
+package com.rasper.bookstore;
+
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.boot.builder.SpringApplicationBuilder;
 import org.springframework.boot.web.servlet.support.SpringBootServletInitializer;
-import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.context.annotation.ComponentScan;
 
-@Controller
+
 @EnableAutoConfiguration
-public class SampleController extends SpringBootServletInitializer {
+@ComponentScan("com.rasper.bookstore")
+public class Application extends SpringBootServletInitializer {
 	
 	  @Override
 	    protected SpringApplicationBuilder configure(SpringApplicationBuilder application) {
-	        return application.sources(SampleController.class);
+	        return application.sources(Application.class);
 	    }
 
-    @RequestMapping("/")
-    //@ResponseBody
-    String home() {
-        return "books/books_inventory_display";
-    }
+   
 
     public static void main(String[] args) throws Exception {
-        SpringApplication.run(SampleController.class, args);
+        SpringApplication.run(Application.class, args);
     }
 }
